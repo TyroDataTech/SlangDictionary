@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="/home" method="post">
+        <input type="text" placeholder="Search slang/muhavara" name="searchbox" value="{{request.form.searchbox }}">
+        <input class="btn btn-default" type="submit" value="Search">
+      </form>
+      {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}
+      {% endif %}
+</body>
+</html>
