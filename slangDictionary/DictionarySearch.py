@@ -2,7 +2,7 @@ from indic_transliteration import sanscript
 from indic_transliteration.sanscript import transliterate
 from fuzzywuzzy import fuzz
 import pandas as pd
-from importlib import reload
+#from importlib import reload
 import sys
 #reload(sys)
 #sys.setdefaultencoding('utf-8')
@@ -10,7 +10,7 @@ import sys
 def searchDict(slang):
 	slang = slang.lower()
 	slang_dev = transliterate(slang, sanscript.ITRANS, sanscript.DEVANAGARI)
-	df = pd.read_csv("database.csv")
+	df = pd.read_csv("database.csv",encoding="utf8")
 	ratio = []
 	for x in df["Muhavara"]:
 		ratio.append(fuzz.ratio(slang_dev,x))
